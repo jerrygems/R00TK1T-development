@@ -1,6 +1,6 @@
-# Rootkits
+# ⚔️ Rootkits
 
-## 🧑‍💻Rootkit development
+## 🤺Rootkit development
 
 ### Requirements
 
