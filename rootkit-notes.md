@@ -89,7 +89,10 @@ So, To achieve this task we have to include few header files
 #include <linux/kernel.h>
 #include <linux/unistd.h>
 
+MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("A kernel program that can execute commands");
+
 int command_executer(void){
         char *cmd_array[] = {"/bin/bash", "-c", "cmd1; cmd2; cmd3; cmdn;", NULL};
         char *env_variable[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/usr/sbin:/bin:/usr/bin", NULL };
@@ -145,7 +148,7 @@ for that, we can add a timer to our previously created kernel program like a cro
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Description");
+MODULE_DESCRIPTION("A kernel program that can print few texts in kernel logs in a certain time period");
 
 static struct timer_list my_timer;//my_timer is a static variable of type struct timer_list
 void command_executer(void){
@@ -189,7 +192,7 @@ module_exit(remove);
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Description");
+MODULE_DESCRIPTION("Another way to write texts in kernel log in a cetain time period");
 
 static struct task_struct *my_thread;
 
@@ -242,7 +245,7 @@ after combining the code the code will look like this
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Description");
+MODULE_DESCRIPTION("A kernel program that can execute few commands in certain time period");
 
 static struct task_struct *my_thread;
 
