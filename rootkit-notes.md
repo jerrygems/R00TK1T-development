@@ -290,3 +290,9 @@ static void __exit remove(void)
 module_init(initiate);
 module_exit(remove);
 ```
+
+# and finally just to make it work when we boots up the device again so follow these few steps
+
+```
+
+```
