@@ -2,6 +2,9 @@
 
 ## 🧑‍💻Rootkit development
 
+### before starting
+## **_ i wanna thanks to @xcellerator (https://xcellarator.github.io) for providing us a easy to learn resource and @f11snipe (https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe)_ for teaching us alot**
+
 ### Requirements
 
 1. A Linux VM for testing our rootkit
@@ -67,7 +70,7 @@ So before going further you may notice some header files here and may ask that w
 ### EXPLAINATION
 
 - **This code as you can see prints the "Hello, Everyone!" in kernel logs to run this you can use the Makefile given below I used this from [xcellerator.github.io/posts/linux_rootkits_01/](http://xcellerator.github.io/posts/linux_rootkits_01/), I found this as really good resource to learn about rootkits**
-```
+```jsx
 obj-m += module_name.o
 
 all:
@@ -317,6 +320,6 @@ sudo depmod
 echo "rk" | sudo tee /etc/modules-load.d/rk.conf
 ```
 
-### document may be updated soon...
 
-## credits @xcellerator ("https://xcellarator.github.io") @f11snipe ("https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe")
+### feel free to drop a message on discord server (https://discord.gg/GP82ZQMCU9) if you found anything wrong in document
+### document may be updated soon... 
