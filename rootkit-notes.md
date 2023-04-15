@@ -332,6 +332,22 @@ modinfo -F filename /lib/modules/$(uname -r)/kernel/*
 ls -al /lib/modules/$(uname -r)/kernel/*
 ```
 
+```jsx
+┌──(sp1d3y㉿Spiderverse)-[/etc/modules-load.d]
+└─$ modinfo -F filename /lib/modules/$(uname -r)/kernel/*
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/arch not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/block not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/crypto not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/drivers not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/fs not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/lib not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/mm not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/net not found.
+/lib/modules/6.0.0-kali3-amd64/kernel/rk.ko
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/sound not found.
+modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/virt not found.
+```
+### so in my case my rootkit is /lib/modules/6.0.0-kali3-amd64/kernel/rk.ko
 
 ### feel free to drop a message on discord server (https://discord.gg/GP82ZQMCU9) if you found anything wrong in document
 ### document may be updated soon... 
