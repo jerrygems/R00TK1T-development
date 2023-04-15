@@ -328,13 +328,13 @@ systemctl reboot
 ***# And you can also find out the rootkits deployed using these commands ***
 
 ```jsx
-modinfo -F filename /lib/modules/$(uname -r)/kernel/*
+modinfo /lib/modules/$(uname -r)/kernel/*
 ls -al /lib/modules/$(uname -r)/kernel/*
 ```
 
 ```jsx
 ┌──(sp1d3y㉿Spiderverse)-[/etc/modules-load.d]
-└─$ modinfo -F filename /lib/modules/$(uname -r)/kernel/*
+└─$ modinfo /lib/modules/$(uname -r)/kernel/* 
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/arch not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/block not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/crypto not found.
@@ -343,9 +343,17 @@ modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/fs not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/lib not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/mm not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/net not found.
-/lib/modules/6.0.0-kali3-amd64/kernel/rk.ko
+filename:       /lib/modules/6.0.0-kali3-amd64/kernel/rk.ko
+description:    A kernel program that can execute few commands in certain time period
+license:        GPL
+author:         J3rry
+depends:        
+retpoline:      Y
+name:           rk
+vermagic:       6.0.0-kali3-amd64 SMP preempt mod_unload modversions 
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/sound not found.
 modinfo: ERROR: Module /lib/modules/6.0.0-kali3-amd64/kernel/virt not found.
+
 ```
 ### so in my case my rootkit is /lib/modules/6.0.0-kali3-amd64/kernel/rk.ko
 
