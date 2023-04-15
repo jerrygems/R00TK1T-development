@@ -3,7 +3,7 @@
 ## 🧑‍💻Rootkit development
 
 ### before starting
-## **_ i wanna thanks to @xcellerator for providing us an easy to learn <a href="https://xcellarator.github.io">resource</a> and @f11snipe for teaching us alot about <a href="https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe">rootkits</a> _**
+## **_i wanna thanks to @xcellerator for providing us an easy to learn <a href="https://xcellarator.github.io">resource</a> and @f11snipe for teaching us alot about <a href="https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe">rootkits</a> _**
 
 ### Requirements
 
