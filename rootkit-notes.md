@@ -320,6 +320,18 @@ sudo depmod
 echo "rk" | sudo tee /etc/modules-load.d/rk.conf
 ```
 
+***# now you can reboot your system***
+```jsx
+systemctl reboot
+```
+
+***# And you can also find out the rootkits deployed using these commands ***
+
+```jsx
+modinfo -F filename /lib/modules/$(uname -r)/kernel/*
+ls -al /lib/modules/$(uname -r)/kernel/*
+```
+
 
 ### feel free to drop a message on discord server (https://discord.gg/GP82ZQMCU9) if you found anything wrong in document
 ### document may be updated soon... 
