@@ -2,20 +2,20 @@
 
 ## 🧑‍💻Rootkit development
 
-### before starting
+### /,-) before starting
 ## **_i wanna thanks to @xcellerator for providing us an easy to learn <a href="https://xcellarator.github.io">resource</a> and @f11snipe for teaching us alot about <a href="https://www.youtube.com/watch?v=f5lz8nGWht4&t=5024s&ab_channel=F11snipe">rootkits</a> _**
 
-### Requirements
+### ;-) Requirements
 
 1. A Linux VM for testing our rootkit
 2. Linux fundamentals
 3. C Programming
 
-### : Why we need Rootkits
+### :-> Why we need Rootkits
 
 After getting root access to a system our main target is to get more persistence so that whenever the system comes online we can get a backdoor again. 
 
-### : Qualities of a good rootkit
+### :-> Qualities of a good rootkit
 
 A **good rootkit** is **not easy to detect** on the system, And it should keep working **even if the system gets restarted** the rootkit also **should be able to escalate higher privileges.**
 
